@@ -11,6 +11,7 @@ Source0:	ftp://ftp.kde.org/pub/kde/unstable/4.0.83/support/%{name}-%{version}.ta
 Patch0:		%{name}-lib64.patch
 BuildRequires:	cmake
 BuildRequires:	rpmbuild(macros) >= 1.293
+Obsoletes:	kde4-automoc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
