@@ -1,28 +1,26 @@
-%define		orgname	automoc
-%define		snap	811226
 
-Summary:	automoc
-Summary(pl.UTF-8):	automoc
-Name:		kde4-automoc
-Version:	4.0.81
-Release:	0.%{snap}.1
+Summary:	automoc4
+Summary(pl.UTF-8):	automoc4
+Name:		automoc4
+Version:	0.9.83
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	%{orgname}-0.0.%{snap}.tar.bz2
-# Source0-md5:	ad6209138f9c80438c464c8922bd80ec
+Source0:	ftp://ftp.kde.org/pub/kde/unstable/4.0.83/support/%{name}-%{version}.tar.bz2
+# Source0-md5:	7876af12da90bd357fc547c4f4828603
 Patch0:		%{name}-lib64.patch
 BuildRequires:	cmake
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-automoc.
+automoc4.
 
 %description -l pl.UTF-8
-automoc.
+automoc3.
 
 %prep
-%setup -q -n %{orgname}
+%setup -q
 %patch0 -p0
 
 %build
@@ -33,7 +31,6 @@ cd build
 %if "%{_lib}" != "lib"
 	-DLIB_SUFFIX=64 \
 %endif
-	-DQT_QMAKE_EXECUTABLE=%{_bindir}/qmake-qt4 \
 	../
 
 %{__make}
