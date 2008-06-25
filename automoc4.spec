@@ -1,4 +1,6 @@
 
+%define		_qtver	4.4.0
+
 Summary:	automoc4
 Summary(pl.UTF-8):	automoc4
 Name:		automoc4
@@ -9,10 +11,10 @@ Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/4.0.83/support/%{name}-%{version}.tar.bz2
 # Source0-md5:	7876af12da90bd357fc547c4f4828603
 Patch0:		%{name}-lib64.patch
-BuildRequires:	QtCore-devel
+BuildRequires:	QtCore-devel >= %{_qtver}
 BuildRequires:	cmake
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= %{_qtver}
+BuildRequires:	qt4-qmake >= %{_qtver}
 BuildRequires:	rpmbuild(macros) >= 1.293
 Obsoletes:	kde4-automoc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
