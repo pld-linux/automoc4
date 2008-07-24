@@ -4,13 +4,12 @@
 Summary:	automoc4
 Summary(pl.UTF-8):	automoc4
 Name:		automoc4
-Version:	0.9.83
+Version:	0.9.84
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/unstable/4.0.83/support/%{name}-%{version}.tar.bz2
-# Source0-md5:	7876af12da90bd357fc547c4f4828603
-Patch0:		%{name}-lib64.patch
+Source0:	ftp://ftp.kde.org/pub/kde/unstable/%{name}/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	6e1167594b8edd0fd2156aad75b4b2b0
 BuildRequires:	QtCore-devel >= %{_qtver}
 BuildRequires:	cmake
 BuildRequires:	qt4-build >= %{_qtver}
@@ -27,7 +26,6 @@ automoc3.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 install -d build
@@ -57,5 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/automoc4
 %dir %{_libdir}/automoc4
-%{_libdir}/automoc4/Automoc4Config.cmake
+%{_libdir}/automoc4/Automoc4*.cmake
 %{_libdir}/automoc4/automoc4.files.in
