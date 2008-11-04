@@ -23,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 automoc4.
 
 %description -l pl.UTF-8
-automoc3.
+automoc4.
 
 %prep
 %setup -q
