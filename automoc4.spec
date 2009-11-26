@@ -8,8 +8,7 @@ Version:	0.9.88
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-#Source0:	ftp://ftp.kde.org/pub/kde/unstable/%{name}/%{version}/%{name}-%{version}.tar.bz2
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{name}/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	91bf517cb940109180ecd07bc90c69ec
 BuildRequires:	QtCore-devel >= %{_qtver}
 BuildRequires:	cmake >= 2.6.1-2
