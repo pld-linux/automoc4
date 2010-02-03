@@ -1,5 +1,5 @@
 
-%define		_qtver	4.4.1
+%define		qtver	4.4.1
 
 Summary:	automoc4
 Summary(pl.UTF-8):	automoc4
@@ -10,10 +10,10 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{name}/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	91bf517cb940109180ecd07bc90c69ec
-BuildRequires:	QtCore-devel >= %{_qtver}
+BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	cmake >= 2.6.1-2
-BuildRequires:	qt4-build >= %{_qtver}
-BuildRequires:	qt4-qmake >= %{_qtver}
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.293
 Obsoletes:	kde4-automoc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
