@@ -1,15 +1,16 @@
 
 %define		qtver	4.4.1
 
-Summary:	automoc4
-Summary(pl.UTF-8):	automoc4
+Summary:	Automoc4 - automatically adding Qt moc files rules for CMake
+Summary(pl.UTF-8):	Automoc4 - automatyczne dodawanie reguł dla plików Qt moc do CMake
 Name:		automoc4
 Version:	0.9.88
-Release:	1
-License:	GPL v2
-Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{name}/%{version}/%{name}-%{version}.tar.bz2
+Release:	2
+License:	BSD
+Group:		Development/Tools
+Source0:	ftp://ftp.kde.org/pub/kde/stable/automoc4/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	91bf517cb940109180ecd07bc90c69ec
+URL:		http://techbase.kde.org/Development/Tools/Automoc4
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	cmake >= 2.6.1-2
 BuildRequires:	qt4-build >= %{qtver}
@@ -19,10 +20,13 @@ Obsoletes:	kde4-automoc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-automoc4.
+automoc4 is a tool to add rules for generating Qt moc files
+automatically to projects that use CMake as the buildsystem.
 
 %description -l pl.UTF-8
-automoc4.
+automoc4 to narzędzie dodające automatycznie reguły do tworzenia
+plików Qt moc do projektów wykorzystujących CMake jako swojego
+systemu budowania.
 
 %prep
 %setup -q
@@ -30,12 +34,15 @@ automoc4.
 %build
 install -d build
 cd build
-%cmake \
+%cmake .. \
+	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
+	-DCMAKE_CXX_FLAGS_RELEASE="-DNDEBUG" \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DCMAKE_VERBOSE_MAKEFILE=ON \
 %if "%{_lib}" != "lib"
 	-DLIB_SUFFIX=64 \
 %endif
-	../
+	-DQT_QMAKE_EXECUTABLE=/usr/bin/qmake-qt4
 
 %{__make}
 
