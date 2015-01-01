@@ -39,9 +39,6 @@ cd build
 	-DCMAKE_CXX_FLAGS_RELEASE="-DNDEBUG" \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
-%if "%{_lib}" != "lib"
-	-DLIB_SUFFIX=64 \
-%endif
 	-DQT_QMAKE_EXECUTABLE=/usr/bin/qmake-qt4
 
 %{__make}
