@@ -5,7 +5,7 @@ Summary:	Automoc4 - automatically adding Qt moc files rules for CMake
 Summary(pl.UTF-8):	Automoc4 - automatyczne dodawanie reguł dla plików Qt moc do CMake
 Name:		automoc4
 Version:	0.9.88
-Release:	3
+Release:	4
 License:	BSD
 Group:		Development/Tools
 Source0:	ftp://ftp.kde.org/pub/kde/stable/automoc4/%{version}/%{name}-%{version}.tar.bz2
